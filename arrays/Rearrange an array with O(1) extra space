@@ -1,0 +1,22 @@
+//Given an array arr[] of size N where every element is in the range from 0 to n-1. Rearrange the given array so that the transformed array arrT[i] becomes arr[arr[i]].
+
+class Solution{
+    public:
+    // arr: input array
+    // n: size of array
+    //Function to rearrange an array so that arr[i] becomes arr[arr[i]]
+    //with O(1) extra space.
+    void arrange(long long arr[], int n) {
+        // Your code here
+        int arr2[n];
+        for(int i=0;i<n;i++)
+        {
+            arr2[i]=arr[arr[i]];
+        }
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=arr2[i];
+        }
+        
+    }
+};
