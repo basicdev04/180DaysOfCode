@@ -1,0 +1,28 @@
+// Given a sorted array of positive integers. Your task is to rearrange the array elements alternatively i.e first element should be max value, second should be min value, third should be second max, fourth should be second min and so on.
+Note: Modify the original array itself. Do it without using any extra space. You do not have to return anything.
+
+
+
+
+void rearrange(long long *arr, int n) 
+    { 
+       int i,j,k;
+       int maxi=arr[n-1]+1;
+       j=n-1;
+       for(i=0;i<n;i+=2)
+       {
+           arr[i]=arr[i]+(arr[j]%maxi)*maxi;
+           j--;
+       }
+       j=0;
+       for(i=1;i<n;i+=2)
+       {
+           arr[i]=arr[i]+(arr[j]%maxi)*maxi;
+           j++;
+       }
+       for(i=0;i<n;i++)
+       {
+           arr[i]/=maxi;
+       }
+    	 
+    }
